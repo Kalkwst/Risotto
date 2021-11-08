@@ -4,8 +4,9 @@
 
 * Use the present tense ("Add feature" not "Added feature")
 * Use the imperative mood ("Move cursor to..." not "Moves cursor to...")
-* Limit the first line to 72 characters or less
-* Reference issues and pull requests liberally after the first line
+* Limit the first line to 50 characters or less
+* For each subsequent line limit to 72 characters or lesd
+* Reference issues and pull requests liberally after the commit body
 * When only changing documentation, include `[ci skip]` in the commit title
 * Consider starting the commit message with an applicable emoji:
     * :art: `:art:` when improving the format/structure of the code
@@ -24,6 +25,72 @@
     * :construction_worker: `:construction_worker:` when adding or updating CI scripts
     * :heavy_plus_sign: `:heavy_plus_sign:` when adding a dependency
     * :heavy_minus_sign: `:heavy_minus_sign:` when removing a dependency
+* Consider using the provided git commit template
+
+#### Git Commit Template
+
+<details>
+    <summary> View Git Commit Template </summary>
+   
+```sh
+# [<cli-skip>][<gitmoji>][<tag>] (If applied, this commit will...) <subject> (Max 72 char)
+# |<----   Preferably using up to 50 chars   --->|<------------------->|
+# Example:
+# [feat] Implement automated commit messages
+
+# (Optional) Explain why this change is being made
+# |<----   Try To Limit Each Line to a Maximum Of 72 Characters   ---->|
+
+# (Optional) Provide links or keys to any relevant tickets, articles or other resources
+# Example: Github issue #23
+
+# At the end: Include Co-authored-by for all contributors. 
+# Co-authored-by: name <user@users.noreply.github.com>
+
+# --- COMMIT END ---
+# gitmoji can be
+#    :art:                  (formatting, changing the structure of the code)
+#    :zap:                  (improving performance)
+#    :fire:                 (removing code or files)
+#    :bug:                  (fixing a bug)
+#    :sparkles:             (adding a new feature)
+#    :ambulance:            (introducing a critical hotfix)
+#    :memo:                 (adding or updating documentation)
+#    :white_check_mark:     (adding or updating tests)
+#    :recycle:              (refactroign code)
+#
+# For a comprehensive list of all available project gitmojis, refer to the CONTRIBUTING.md file
+#
+# Tag can be 
+#    feat        (new feature)
+#    fix         (bug fix)
+#    refactor    (refactoring code)
+#    style       (formatting, missing semi colons, etc; no code change)
+#    doc         (changes to documentation)
+#    test        (adding or refactoring tests; no production code change)
+#    dependency  (version bump/new release; no production code change)
+#    dbg         (Changes in debugging code/frameworks; no production code change)
+#    hack        (Temporary fix to make things move forward; please avoid it)
+#    WIP         (Work In Progress; for intermediate commits to keep patches reasonably sized)
+#
+# Note: Multiple tags can be combined, e.g. [fix][WIP] Fix issue X with methodhandles
+# --------------------
+# Remember to:
+#   * Capitalize the subject line
+#   * Use the imperative mood in the subject line
+#   * Do not end the subject line with a period
+#   * Separate subject from body with a blank line
+#   * Use the body to explain what and why vs. how
+#   * Can use multiple lines with "-" or "*" for bullet points in body
+# --------------------
+```
+   
+</details>
+   
+To tell Git to use the template file, use the following command:
+```
+git config commit.template ~/.gitmessage
+```
 
 ### C# Styleguides
 #### Namespaces
