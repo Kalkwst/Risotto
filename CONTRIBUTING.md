@@ -1,3 +1,35 @@
+## Table Of Contents
+
+- [Styleguides](#styleguides)
+  - [Git Commit Messages](#git-commit-messages)
+    - [Git Commit Template](#git-commit-template)
+  - [C# Styleguides](#c-styleguides)
+      - [Namespaces](#namespaces)
+      - [Classes & Interfaces](#classes--interfaces)
+      - [Methods](#methods)
+      - [Fields](#fields)
+      - [Properties](#properties)
+      - [Parameters](#parameters)
+      - [Actions](#actions)
+      - [Misc](#misc)
+    - [Declarations](#declarations)
+      - [Access Level Modifiers](#access-level-modifiers)
+      - [Fields & Variables](#fields--variables)
+      - [Classes](#classes)
+      - [Interfaces](#interfaces)
+    - [Spacing](#spacing)
+      - [Indentation](#indentation)
+      - [Blocks](#blocks)
+      - [Line Length](#line-length)
+      - [Vertical Spacing](#vertical-spacing)
+    - [Switch Statements](#switch-statements)
+- [Documentation and Comments](#documentation-and-comments)
+- [Additional Notes](#additional-notes)
+  - [Issue and Pull Request Labels](#issue-and-pull-request-labels)
+    - [Type of Issue and Issue State](#type-of-issue-and-issue-state)
+    - [Topic Labels](#topic-labels)
+    - [Pull Request Labels](#pull-request-labels)
+
 ## Styleguides
 
 ### Git Commit Messages
@@ -5,7 +37,7 @@
 * Use the present tense ("Add feature" not "Added feature")
 * Use the imperative mood ("Move cursor to..." not "Moves cursor to...")
 * Limit the first line to 50 characters or less
-* For each subsequent line limit to 72 characters or less
+* For each subsequent line limit to 72 characters or lesd
 * Reference issues and pull requests liberally after the commit body
 * When only changing documentation, include `[ci skip]` in the commit title
 * Consider starting the commit message with an applicable emoji:
