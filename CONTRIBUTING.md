@@ -93,7 +93,8 @@ git config commit.template ~/.gitmessage
 ```
 
 ### C# Styleguides
-#### Namespaces
+
+##### Namespaces
 
 Namespaces are all **PascalCase**, multiple words concatenated together, without hyphens(`-`) or underscores(`_`). The exception to this rule are acronyms like *GUI* or *HUD*, which can be uppercase:
 
@@ -107,6 +108,199 @@ com.some.long.name.space.thingy
 
 ```
 Some.Long.Namespace.Including.GUI.UUIDGenerator
+```
+
+##### Classes & Interfaces
+
+Classes and interfaces are written in **PascalCase**. For example `EnumerableUtils`.
+
+##### Methods
+
+Methods are written in **PascalCase**. For example `DoSomething()`.
+
+##### Fields
+
+All non-static fields are written in **camelCase**.
+
+For example:
+
+```csharp
+public class MyClass
+{
+    private int privateField;
+    protected int protectedField;
+}
+```
+
+**Avoid**
+
+```csharp
+private int _privateVariable;
+```
+
+**Prefer**
+
+```csharp
+private int privateVariable;
+```
+
+Static, public and package private fields are the exception and should be written in **PascalCase**:
+
+```csharp
+public static int TheAnswer = 42;
+```
+
+##### Properties
+
+All properties are written in **PascalCase**. For example:
+
+```csharp
+public int PageNumber
+{
+    get {return pageNumber;}
+    set {pageNumber = value;}
+}
+```
+
+##### Parameters
+
+Parameters are written in **camelCase**.
+
+**Avoid**
+
+```csharp
+void DoSomething(IEnumerable Source)
+```
+
+**Prefer**
+
+```csharp
+void DoSomething(IEnumerable source)
+```
+
+##### Actions
+
+Actions are written in **PascalCase**. For example:
+
+```csharp
+public Action<int> ValueChanged;
+```
+
+##### Misc
+
+In code, acronyms should be treated as words. For example:
+
+**Avoid**
+
+```
+XMLHTTPRequest
+string URL
+findPostByID
+```
+
+**Prefer**
+
+```
+XmlHttpRequest
+url
+findPostById
+```
+
+#### Declarations
+
+##### Access Level Modifiers
+
+Access level modifiers should be explicitly defined for classes, methods and member variables.
+
+##### Fields & Variables
+
+Prefer single declaration per line
+
+**Avoid**
+
+```csharp
+string username, githubHandle;
+```
+
+**Prefer**
+
+```csharp
+string username;
+string githubHandle;
+```
+
+##### Classes
+
+Exactly one class per source file, although inner classes are encouraged where scoping appropriate.
+
+##### Interfaces
+
+All interfaces should be prefaced with the letter **I**.
+
+#### Spacing
+
+##### Indentation
+
+Indentation should be done using **spaces** - never **tabs**.
+
+##### Blocks
+
+Indentation for blocks uses **4 spaces** for optimal readability:
+
+**Avoid**
+
+```csharp
+for (int i = 0; i < 10; i++)
+{
+  Debug.Log($"Index: {i}");
+}
+```
+
+**Prefer**
+
+```csharp
+for (int i = 0; i < 10; i++)
+{
+    Debug.Log($"Index: {i}");
+}
+```
+
+##### Line Length
+
+Lines should be no longer than **100** characters long.
+
+##### Vertical Spacing
+
+There should be exactly one blank line between methods to aid in visual clarity and organization. Whitespace within methods should separate functionality, but having too many sections in a method often means you should refactor into several methods.
+
+#### Switch Statements
+
+Switch statements come with `default` case by default. If the `default` case is never reached, be sure to remove it.
+
+**Avoid**  
+  
+```csharp
+switch (variable) 
+{
+    case 1:
+        break;
+    case 2:
+        break;
+    default:
+        break;
+}
+```
+
+**Prefer**  
+  
+```csharp
+switch (variable) 
+{
+    case 1:
+        break;
+    case 2:
+        break;
+}
 ```
 
 ## Documentation and Comments
