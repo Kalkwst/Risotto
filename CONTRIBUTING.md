@@ -12,6 +12,8 @@ The following is a set of guidelines for contributing to Risotto. These are most
       - [How Do I Submit A (Good) Bug Report?](#how-do-i-submit-a-good-bug-report)
     - [Suggesting Enhancements](#suggesting-enhancements)
       - [How Do I Submit A (Good) Enhancement Suggestion?](#how-do-i-submit-a-good-enhancement-suggestion)
+    - [Your First Code Contribution](#your-first-code-contribution)
+    - [Pull Requests](#pull-requests)
   - [Styleguides](#styleguides)
     - [Git Commit Messages](#git-commit-messages)
       - [Git Commit Template](#git-commit-template)
@@ -91,6 +93,34 @@ Bugs are tracked as [GitHub issues](https://guides.github.com/features/issues/).
 * **Provide specific examples to demonstrate the steps**. Include copy/pasteable snippets which you use in those examples, as [Markdown code blocks](https://help.github.com/articles/markdown-basics/#multiple-lines).
 * **Describe the current behavior** and **explain which behavior you expected to see instead** and why.
 * **Specify the name and version of the OS you're using.**
+
+### Your First Code Contribution
+
+Unsure where to begin contributing to Risotto? You can start by looking through these `beginner` and `help-wanted` issues:
+
+* [Beginner Issues][beginner] - issues which should only require a few lines of code, and a test or two.
+* [Help Wanted Issues][help-wanted] - issues which should be a bit more involved than `beginner` issues.
+
+### Pull Requests
+
+The process described here has several goals:
+
+- Maintain Risotto's quality
+- Fix problems that are important to users
+- Engage the community in working towards the best possible Risotto
+- Enable a sustainable system for Risotto's maintainers to review contributions
+
+Please follow these steps to have your contribution considered by the maintainers:
+
+1. Follow the instructions of the appropriate template:
+   * [Bug Fixes](.github/PULL_REQUEST_TEMPLATE/BUG_FIX_TEMPLATE.md)
+   * [Documentation Fixes](.github/PULL_REQUEST_TEMPLATE/DOCS_PULL_REQUEST.md)
+   * [Performance Fixes](.github/PULL_REQUEST_TEMPLATE/FEAT_PULL_REQUEST.md)
+   * [Feature Requests](.github/PULL_REQUEST_TEMPLATE/FEAT_PULL_REQUEST.md)
+2. Follow the [styleguides](#styleguides)
+3. After you submit your pull request, verify that all [status checks](https://help.github.com/articles/about-status-checks/) are passing <details><summary>What if the status checks are failing?</summary>If a status check is failing, and you believe that the failure is unrelated to your change, please leave a comment on the pull request explaining why you believe the failure is unrelated. A maintainer will re-run the status check for you. If we conclude that the failure was a false positive, then we will open an issue to track that problem with our status check suite.</details>
+
+While the prerequisites above must be satisfied prior to having your pull request reviewed, the reviewer(s) may ask you to complete additional design work, tests, or other changes before your pull request can be ultimately accepted. 
 
 ## Styleguides
 
