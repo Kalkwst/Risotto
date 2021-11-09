@@ -1,34 +1,78 @@
+# Contributing to Risotto
+:+1::tada: First off, thanks for taking the time to contribute! :tada::+1:
+
+The following is a set of guidelines for contributing to Risotto. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
+
 ## Table Of Contents
 
-- [Styleguides](#styleguides)
-  - [Git Commit Messages](#git-commit-messages)
-    - [Git Commit Template](#git-commit-template)
-  - [C# Styleguides](#c-styleguides)
-      - [Namespaces](#namespaces)
-      - [Classes & Interfaces](#classes--interfaces)
-      - [Methods](#methods)
-      - [Fields](#fields)
-      - [Properties](#properties)
-      - [Parameters](#parameters)
-      - [Actions](#actions)
-      - [Misc](#misc)
-    - [Declarations](#declarations)
-      - [Access Level Modifiers](#access-level-modifiers)
-      - [Fields & Variables](#fields--variables)
-      - [Classes](#classes)
-      - [Interfaces](#interfaces)
-    - [Spacing](#spacing)
-      - [Indentation](#indentation)
-      - [Blocks](#blocks)
-      - [Line Length](#line-length)
-      - [Vertical Spacing](#vertical-spacing)
-    - [Switch Statements](#switch-statements)
-- [Documentation and Comments](#documentation-and-comments)
-- [Additional Notes](#additional-notes)
-  - [Issue and Pull Request Labels](#issue-and-pull-request-labels)
-    - [Type of Issue and Issue State](#type-of-issue-and-issue-state)
-    - [Topic Labels](#topic-labels)
-    - [Pull Request Labels](#pull-request-labels)
+- [Contributing to Risotto](#contributing-to-risotto)
+  - [Table Of Contents](#table-of-contents)
+  - [How Can I Contribute?](#how-can-i-contribute)
+    - [Reporting Bugs](#reporting-bugs)
+      - [How Do I Submit A (Good) Bug Report?](#how-do-i-submit-a-good-bug-report)
+  - [Styleguides](#styleguides)
+    - [Git Commit Messages](#git-commit-messages)
+      - [Git Commit Template](#git-commit-template)
+    - [C# Styleguides](#c-styleguides)
+        - [Namespaces](#namespaces)
+        - [Classes & Interfaces](#classes--interfaces)
+        - [Methods](#methods)
+        - [Fields](#fields)
+        - [Properties](#properties)
+        - [Parameters](#parameters)
+        - [Actions](#actions)
+        - [Misc](#misc)
+      - [Declarations](#declarations)
+        - [Access Level Modifiers](#access-level-modifiers)
+        - [Fields & Variables](#fields--variables)
+        - [Classes](#classes)
+        - [Interfaces](#interfaces)
+      - [Spacing](#spacing)
+        - [Indentation](#indentation)
+        - [Blocks](#blocks)
+        - [Line Length](#line-length)
+        - [Vertical Spacing](#vertical-spacing)
+      - [Switch Statements](#switch-statements)
+  - [Documentation and Comments](#documentation-and-comments)
+  - [Additional Notes](#additional-notes)
+    - [Issue and Pull Request Labels](#issue-and-pull-request-labels)
+      - [Type of Issue and Issue State](#type-of-issue-and-issue-state)
+      - [Topic Labels](#topic-labels)
+      - [Pull Request Labels](#pull-request-labels)
+
+
+## How Can I Contribute?
+
+### Reporting Bugs
+
+This section will guide you through submitting a bug report for Rissoto. Following these guidelines helps maintainers and the community understand your report, reproduce the behaviour and find related reports.
+
+Before creating bug reports, please check [this list](#before-submitting-a-bug-report) as you might find out that you don't need to create one. When you are creating a bug report, please [include as many details as possible](#how-do-i-submit-a-good-bug-report). Fill out the appropriate template, the info it asks for, will help us resolve issues faster.
+
+> **Note:** If you find a **Closed** issue that seems like it is the same thing that you're experiencing, open a new issue and include a link to the original issue in the body of your new one.
+
+#### How Do I Submit A (Good) Bug Report?
+
+Bugs are tracked as [GitHub issues](https://guides.github.com/features/issues/). Create an issue on the repository and provide the info required by the bug report template.
+
+Explain the problem and include additional details to help maintainers reproduce the problem:
+
+* **Use a clear and descriptive title** for the issue to identify the problem.
+* **Describe the exact steps which reproduce the problem** is as many details as possible.
+* **Provide specific examples to demonstrate the steps**. Include links to files or GitHub projects, or copy/pasteable snippets, which you use in those examples. If you're providing snippets in the issue, use [Markdown code blocks](https://help.github.com/articles/markdown-basics/#multiple-lines).
+* **Describe the behavior you observed after following the steps** and point out what exactly is the problem with that behavior.
+* * **Explain which behavior you expected to see instead and why.**
+
+Provide more context by answering these questions:
+
+* **Did the problem start happening recently** (e.g. after updating to a new version of Risotto) or was this always a problem?
+* If the problem started happening recently, **can you reproduce the problem in an older version of Risotto?** What's the most recent version in which the problem doesn't happen?
+* **Can you reliably reproduce the issue?** If not, provide details about how often the problem happens and under which conditions it normally happens.
+
+Include details about your configuration and environment:
+
+* **Which version of Atom are you using**?
+* **What's the name and version of the OS you're using**?
 
 ## Styleguides
 
