@@ -10,6 +10,8 @@ The following is a set of guidelines for contributing to Risotto. These are most
   - [How Can I Contribute?](#how-can-i-contribute)
     - [Reporting Bugs](#reporting-bugs)
       - [How Do I Submit A (Good) Bug Report?](#how-do-i-submit-a-good-bug-report)
+    - [Suggesting Enhancements](#suggesting-enhancements)
+      - [How Do I Submit A (Good) Enhancement Suggestion?](#how-do-i-submit-a-good-enhancement-suggestion)
   - [Styleguides](#styleguides)
     - [Git Commit Messages](#git-commit-messages)
       - [Git Commit Template](#git-commit-template)
@@ -73,6 +75,22 @@ Include details about your configuration and environment:
 
 * **Which version of Atom are you using**?
 * **What's the name and version of the OS you're using**?
+
+### Suggesting Enhancements
+
+This section guides you through submitting an enhancement suggestion for Risotto, including completely new features and minor improvements to existing functionality. Following these guidelines helps maintainers and the community understand your suggestion and find related suggestions.
+
+Before creating enhancement suggestions, make a cursory search to see if the problem has already been reported, as you might find out that you don't need to create one. When you are creating an enhancement suggestion, please [include as many details as possible](#how-do-i-submit-a-good-enhancement-suggestion). Fill out the appropriate template, including the steps that you imagine you would take if the feature you're requesting existed.
+
+#### How Do I Submit A (Good) Enhancement Suggestion?
+
+Bugs are tracked as [GitHub issues](https://guides.github.com/features/issues/). Create an issue on that repository and provide the info required by the feature request template.
+
+* **Use a clear and descriptive title** for the issue to identify the suggestion.
+* **Provide a step-by-step description of the suggested enhancement** in as many details as possible.
+* **Provide specific examples to demonstrate the steps**. Include copy/pasteable snippets which you use in those examples, as [Markdown code blocks](https://help.github.com/articles/markdown-basics/#multiple-lines).
+* **Describe the current behavior** and **explain which behavior you expected to see instead** and why.
+* **Specify the name and version of the OS you're using.**
 
 ## Styleguides
 
