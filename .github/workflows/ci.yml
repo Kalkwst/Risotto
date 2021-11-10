@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - develop
+  
+  pull_request:
+    branches:
+      - develop
+
+jobs:
+  build:
+    runs-on: [windows-latest]
+    strategy:
+      matrix:
+        dotnet: [ '2.1.x', '3.1.x', '5.0.x' ]
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+    - name: Setup ${{ matrix.dotnet }}
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: ${{ matrix.dotnet }}
+    - name: Restore dependencies
+      run: dotnet restore
+      working-directory: Risotto
+    - name: Build
+      run: dotnet build --no-restore
+      working-directory: Risotto
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
+      working-directory: Risotto.Tests
