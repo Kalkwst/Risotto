@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31829.152
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Risotto", "Risotto.csproj", "{0D845EC5-97D2-4B43-B778-2D8A7466F2BB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0D845EC5-97D2-4B43-B778-2D8A7466F2BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D845EC5-97D2-4B43-B778-2D8A7466F2BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D845EC5-97D2-4B43-B778-2D8A7466F2BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D845EC5-97D2-4B43-B778-2D8A7466F2BB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FD4C3264-A14E-42A8-A9D1-D9ABDDE42466}
+	EndGlobalSection
+EndGlobal
