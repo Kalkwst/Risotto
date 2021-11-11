@@ -22,4 +22,8 @@ Checks if all elements in the sequence are unique. This operator can be provided
 
 This method has 2 overloads.
 
+#### Purge
+
+Completely consumes the given sequence. This method uses immediate execution and doesn't store any data.
+
 </details>
