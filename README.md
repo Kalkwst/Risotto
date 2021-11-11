@@ -32,6 +32,10 @@ This method has 2 overloads.
 
 Determines whether or not the number of elements in the sequence is greater than or equal to the given integer.
 
+#### AtMost
+
+Determines whether or not the number of elements in the sequence is less than or equal to the given integer.
+
 #### Bifurcate
 
 Splits values into two groups, based on the result of the given filtering function.
