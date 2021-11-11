@@ -32,4 +32,4 @@ jobs:
       working-directory: Risotto
     - name: Test
       run: dotnet test --no-build --verbosity normal
-      working-directory: Risotto.Tests
+      working-directory: Risotto.Test
