@@ -28,6 +28,10 @@ Asserts that all elements of a sequence meet a given condition otherwise throws 
 
 This method has 2 overloads.
 
+#### Bifurcate
+
+Splits values into two groups, based on the result of the given filtering function.
+
 #### Purge
 
 Completely consumes the given sequence. This method uses immediate execution and doesn't store any data.
