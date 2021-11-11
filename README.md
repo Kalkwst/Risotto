@@ -16,4 +16,10 @@ This operator can be provided with a custom predicate to perform on all elements
 
 This method has 4 overloads.
 
+#### AllUnique
+
+Checks if all elements in the sequence are unique. This operator can be provided with a custom predicate to apply on all elements of the sequence, before the uniqueness check.
+
+This method has 2 overloads.
+
 </details>
