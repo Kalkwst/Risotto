@@ -28,6 +28,10 @@ Asserts that all elements of a sequence meet a given condition otherwise throws 
 
 This method has 2 overloads.
 
+#### AtLeast
+
+Determines whether or not the number of elements in the sequence is greater than or equal to the given integer.
+
 #### Bifurcate
 
 Splits values into two groups, based on the result of the given filtering function.
