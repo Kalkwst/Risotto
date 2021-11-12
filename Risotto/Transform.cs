@@ -6,7 +6,7 @@ namespace Risotto.LINQ
 	static partial class LINQExtensions
 	{
 		/// <summary>
-		/// Transforms all elements form the source sequence with the given transformer and returns a new transformed enumerable.
+		/// Transforms all elements of the source sequence with the given transformer and returns a new transformed enumerable.
 		/// </summary>
 		/// <typeparam name="TSource">The type of elements in <paramref name="source"/> sequence.</typeparam>
 		/// <typeparam name="TResult">The type of the result returned by the <paramref name="transformer"/>.</typeparam>
