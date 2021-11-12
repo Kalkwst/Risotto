@@ -46,6 +46,12 @@ Batches the source sequence into sized chunks.
 
 This method has 2 overloads.
 
+#### Compact
+
+ Remove all elements that are considered "falsy" by the provided predicate.
+
+ This method has 2 overloads.
+
 #### Purge
 
 Completely consumes the given sequence. This method uses immediate execution and doesn't store any data.
