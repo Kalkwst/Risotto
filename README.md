@@ -22,12 +22,6 @@ Checks if all elements in the sequence are unique. This operator can be provided
 
 This method has 2 overloads.
 
-#### Assert
-
-Asserts that all elements of a sequence meet a given condition otherwise throws an exception.
-
-This method has 2 overloads.
-
 #### AtLeast
 
 Determines whether or not the number of elements in the sequence is greater than or equal to the given integer.
@@ -35,6 +29,12 @@ Determines whether or not the number of elements in the sequence is greater than
 #### AtMost
 
 Determines whether or not the number of elements in the sequence is less than or equal to the given integer.
+    
+#### Attempt
+
+Asserts that all elements of a sequence meet a given condition otherwise throws an exception.
+
+This method has 2 overloads.
 
 #### Bifurcate
 
