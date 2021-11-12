@@ -40,6 +40,12 @@ Determines whether or not the number of elements in the sequence is less than or
 
 Splits values into two groups, based on the result of the given filtering function.
 
+#### Chunk
+
+Batches the source sequence into sized chunks.
+
+This method has 2 overloads.
+
 #### Purge
 
 Completely consumes the given sequence. This method uses immediate execution and doesn't store any data.
