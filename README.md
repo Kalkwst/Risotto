@@ -56,4 +56,8 @@ This method has 2 overloads.
 
 Completely consumes the given sequence. This method uses immediate execution and doesn't store any data.
 
+#### Transform
+
+Transfoorms all of the elements in the sequence and returns the transformed results.
+
 </details>
