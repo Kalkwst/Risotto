@@ -58,6 +58,12 @@ Determines whether the first sequence contains all of the elements of the second
 
 This method has 2 overloads.
 
+#### ContainsAny
+
+Determines whether the first sequence contains any of the elements of the second sequence.
+
+This method has 2 overloads.
+
 #### Purge
 
 Completely consumes the given sequence. This method uses immediate execution and doesn't store any data.
