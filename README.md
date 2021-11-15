@@ -69,6 +69,12 @@ This method has 2 overloads.
 Determines whether or not the number of elements in the sequence is between an inclusive range of minimum
 and maximum integers.
 
+#### CountBy
+
+Applies a key-generating function to each element of a sequence and returns a sequence of unique keys and their number of occurrences in the original sequence.
+
+This method has 2 overloads.
+
 #### Purge
 
 Completely consumes the given sequence. This method uses immediate execution and doesn't store any data.
