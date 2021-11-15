@@ -32,4 +32,7 @@ jobs:
       working-directory: Risotto
     - name: Test
       run: dotnet test --no-build --verbosity normal
+           /p:CollectCoverage=true
+           /p:CoverletOutput=TestResults/
+           /p:CoverletOutputFormat=lcov
       working-directory: Risotto.Test
