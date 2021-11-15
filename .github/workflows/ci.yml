@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - develop
+      - Risotto-Coverage
   
   pull_request:
     branches:
