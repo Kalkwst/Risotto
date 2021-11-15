@@ -64,6 +64,11 @@ Determines whether the first sequence contains any of the elements of the second
 
 This method has 2 overloads.
 
+#### CountBetween
+
+Determines whether or not the number of elements in the sequence is between an inclusive range of minimum
+and maximum integers.
+
 #### Purge
 
 Completely consumes the given sequence. This method uses immediate execution and doesn't store any data.
