@@ -75,6 +75,12 @@ Applies a key-generating function to each element of a sequence and returns a se
 
 This method has 2 overloads.
 
+#### ForEach
+
+Executes the given action on each element in the source sequence.
+
+This method has 4 overloads.
+
 #### Purge
 
 Completely consumes the given sequence. This method uses immediate execution and doesn't store any data.
