@@ -1,6 +1,6 @@
 # Risotto
 
-![develop](https://github.com/github/docs/actions/workflows/ci.yml/badge.svg?branch=develop)
+![licence](https://github.com/github/docs/actions/workflows/ci.yml/badge.svg?branch=develop) ![build](https://img.shields.io/github/workflow/status/Kalkwst/Risotto/CI/develop)
 
 ## 📖 Table of Contents
 
