@@ -1,4 +1,6 @@
 # Risotto
+![build](https://img.shields.io/github/workflow/status/Kalkwst/Risotto/CI/develop)
+![license](https://img.shields.io/github/license/Kalkwst/Risotto)
 
 ## 📖 Table of Contents
 
