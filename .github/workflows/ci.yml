@@ -26,7 +26,7 @@ jobs:
       with:
         dotnet-version: ${{ matrix.dotnet }}
     - name: Restore dependencies
-      run: dotnet restore -v diagnostic
+      run: dotnet restore Risotto.sln
     - name: Build
       run: dotnet build --no-restore
       working-directory: Risotto
