@@ -28,6 +28,9 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore -v diagnostic
       working-directory: Risotto
+    - name: Restore dependencies
+      run: dotnet restore -v diagnostic
+      working-directory: Risotto.Test
     - name: Build
       run: dotnet build --no-restore
       working-directory: Risotto
