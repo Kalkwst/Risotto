@@ -1,5 +1,7 @@
 # Risotto
 
+![develop](https://github.com/github/docs/actions/workflows/ci.yml/badge.svg?branch=develop)
+
 ## 📖 Table of Contents
 
 ## Features at a Glance
