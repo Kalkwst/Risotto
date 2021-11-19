@@ -83,6 +83,12 @@ Counts the occurrences of a value in a sequence.
 
 This method has 2 overloads.
 
+#### Difference
+
+Returns all the elements that exists in the first sequence, that do not exists in the second sequence, without filtering out duplicates.
+
+This method has 2 overloads.
+
 #### ForEach
 
 Executes the given action on each element in the source sequence.
