@@ -89,6 +89,12 @@ Returns all the elements that exists in the first sequence, that do not exists i
 
 This method has 2 overloads.
 
+#### DifferenceBy
+
+Returns the difference between to sequences, after applying the provided function to each array element of both.
+
+This method has 2 overloads.
+
 #### ForEach
 
 Executes the given action on each element in the source sequence.
