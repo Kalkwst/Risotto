@@ -95,6 +95,12 @@ Returns the difference between to sequences, after applying the provided functio
 
 This method has 2 overloads.
 
+#### DistinctBy
+
+Returns all distinct elements of the given source, where "distinctness" is determined via a projection and the default equality comparer for the projected type.
+
+This method has 2 overloads.
+
 #### ForEach
 
 Executes the given action on each element in the source sequence.
