@@ -111,6 +111,10 @@ This method has 4 overloads.
 
 Completely consumes the given sequence. This method uses immediate execution and doesn't store any data.
 
+#### SkipUntil
+
+Skips items from the input sequence until the given predicate returns true, when applied to the current sequence item. That item will not be skipped.
+
 #### Transform
 
 Transfoorms all of the elements in the sequence and returns the transformed results.
