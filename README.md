@@ -101,6 +101,10 @@ Returns all distinct elements of the given source, where "distinctness" is deter
 
 This method has 2 overloads.
 
+#### EveryNth
+
+Returns every `nth` element in the sequence.
+
 #### ForEach
 
 Executes the given action on each element in the source sequence.
