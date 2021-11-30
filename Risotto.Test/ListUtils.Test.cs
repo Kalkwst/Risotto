@@ -182,7 +182,7 @@ namespace Risotto.Test
 		[Test]
 		public void LastIndexOfCustomComparerTargetIntIntTargetNotFound()
 		{
-			Assert.That(DinosaurList.LastIndexOf("TyRanNosAuruS", 2, 2, StringComparer.OrdinalIgnoreCase) == 0);
+			Assert.That(DinosaurList.LastIndexOf("TyRanNosAuruS", 2, 2, StringComparer.OrdinalIgnoreCase) == -1);
 		}
 
 		#endregion
