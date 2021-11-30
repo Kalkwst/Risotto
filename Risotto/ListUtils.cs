@@ -29,11 +29,7 @@ namespace Risotto
 			if (comparer == null)
 				throw new ArgumentNullException(nameof(comparer));
 
-			for (int i = 0; i < source.Count; i++)
-				if (comparer.Equals(item, source[i]))
-					return i;
-
-			return -1;
+			return IndexOf(source, item, 0, source.Count, comparer);
 		}
 
 		/// <summary>
@@ -60,19 +56,12 @@ namespace Risotto
 		/// <exception cref="ArgumentOutOfRangeException"> if <c>index</c> is outside the range of valid indices for the <see cref="List{T}"/></exception>
 		public static int IndexOf<T>(this IList<T> source, T item, int index, IEqualityComparer<T> comparer)
 		{
+			if (source == null)
+				throw new ArgumentNullException(nameof(source));
 			if (comparer == null)
 				throw new ArgumentNullException(nameof(comparer));
 
-			if (index > source.Count)
-				throw new ArgumentOutOfRangeException(nameof(index));
-			if (index < 0)
-				throw new ArgumentOutOfRangeException(nameof(index));
-
-			for (int i = index; i < source.Count; i++)
-				if (comparer.Equals(item, source[i]))
-					return i;
-
-			return -1;
+			return IndexOf(source, item, index, source.Count - index, comparer);
 		}
 
 		/// <summary>
@@ -99,16 +88,18 @@ namespace Risotto
 		/// <exception cref="ArgumentOutOfRangeException"> index is outside the range of valid indexes for the <see cref="List{T}"/>, count is less than 0, or index and count do not specify a valid section in the <see cref="List{T}"/>.</exception>
 		public static int IndexOf<T>(this IList<T> source, T item, int index, int count, IEqualityComparer<T> comparer)
 		{
+			if (source == null)
+				throw new ArgumentNullException(nameof(source));
 			if (comparer == null)
 				throw new ArgumentNullException(nameof(comparer));
 
-			if (index > source.Count)
+			if (index < 0 || index > source.Count)
 				throw new ArgumentOutOfRangeException(nameof(index));
-			if (count < 0 || index > source.Count - count)
+			if (count < 0 || count > source.Count - index)
 				throw new ArgumentOutOfRangeException(nameof(count));
 
-
-			for (int i = index; i < index + count; i++)
+			int endIndex = index + count;
+			for (int i = index; i < endIndex; i++)
 				if (comparer.Equals(item, source[i]))
 					return i;
 
