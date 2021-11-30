@@ -1,9 +1,6 @@
 ﻿using NUnit.Framework;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Risotto.Test
 {
@@ -106,6 +103,88 @@ namespace Risotto.Test
 		{
 			Assert.That(DinosaurList.IndexOf("TyRanNosAuruS", 0, 3, StringComparer.OrdinalIgnoreCase) == 0);
 		}
+		#endregion
+
+		#region LastIndexOf
+
+		[Test]
+		public void LastIndexOfNullCustomComparer()
+		{
+			Assert.Throws<ArgumentNullException>(() => DinosaurList.LastIndexOf("TYRANNOSAURUS", null));
+		}
+
+		[Test]
+		public void LastIndexOfCustomComparerOnlyTargetExisting()
+		{
+			Assert.That(DinosaurList.LastIndexOf("TYRANNOSAURUS", StringComparer.OrdinalIgnoreCase) == 5);
+		}
+
+		[Test]
+		public void LastIndexOfCustomComparerOnlyTargetNotExisting()
+		{
+			Assert.That(DinosaurList.LastIndexOf("Stegosaurus", StringComparer.OrdinalIgnoreCase) == -1);
+		}
+
+		[Test]
+		public void LastIndexOfCustomComparerTargetAndStartingIndexNullComparer()
+		{
+			Assert.Throws<ArgumentNullException>(() => DinosaurList.LastIndexOf("TyRanNoSaurUs", 3, null));
+		}
+
+		[Test]
+		public void LastIndexOfCustomComparerTargetAndStartingIndexOutOfRange()
+		{
+			Assert.Throws<ArgumentOutOfRangeException>(() => DinosaurList.LastIndexOf("TyRanNoSaurUs", 113, StringComparer.OrdinalIgnoreCase));
+		}
+
+		[Test]
+		public void LastIndexOfCustomComparerTargetAndStartingIndexNegativeIndex()
+		{
+			Assert.Throws<ArgumentOutOfRangeException>(() => DinosaurList.LastIndexOf("TyRanNoSaurUs", -1, StringComparer.OrdinalIgnoreCase));
+		}
+
+		[Test]
+		public void LastIndexOfCustomComparerTargetAndStartingIndexNotExisting()
+		{
+			Assert.That(DinosaurList.LastIndexOf("Amargasaurus", 3, StringComparer.OrdinalIgnoreCase) == 1);
+		}
+
+		[Test]
+		public void LastIndexOfCustomComparerTargetAndStartingIndexExisting()
+		{
+			Assert.That(DinosaurList.LastIndexOf("TyRanNoSaurUs", 3, StringComparer.OrdinalIgnoreCase) == 0);
+		}
+
+		[Test]
+		public void LastIndexOfCustomComparerTargetIntIntNegativeIndex()
+		{
+			Assert.Throws<ArgumentOutOfRangeException>(() => DinosaurList.LastIndexOf("TyRanNoSaurUs", -1, 3, StringComparer.OrdinalIgnoreCase));
+		}
+
+		[Test]
+		public void LastIndexOfCustomComparerTargetIntIntGreaterIndex()
+		{
+			Assert.Throws<ArgumentOutOfRangeException>(() => DinosaurList.LastIndexOf("TyRanNoSaurUs", 113, 3, StringComparer.OrdinalIgnoreCase));
+		}
+
+		[Test]
+		public void LastIndexOfCustomComparerTargetIntIntNegativeCount()
+		{
+			Assert.Throws<ArgumentOutOfRangeException>(() => DinosaurList.LastIndexOf("Tyrannosaurus", 1, -3, StringComparer.OrdinalIgnoreCase));
+		}
+
+		[Test]
+		public void LastIndexOfCustomComparerTargetIntIntCountOverflow()
+		{
+			Assert.Throws<ArgumentOutOfRangeException>(() => DinosaurList.LastIndexOf("Tyrannosaurus", 1, 18, StringComparer.OrdinalIgnoreCase));
+		}
+
+		[Test]
+		public void LastIndexOfCustomComparerTargetIntIntTargetNotFound()
+		{
+			Assert.That(DinosaurList.LastIndexOf("TyRanNosAuruS", 2, 2, StringComparer.OrdinalIgnoreCase) == -1);
+		}
+
 		#endregion
 	}
 }
