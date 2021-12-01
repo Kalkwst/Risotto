@@ -105,6 +105,10 @@ This method has 2 overloads.
 
 Returns every `nth` element in the sequence.
 
+#### Exactly
+
+Determines whether or not the number of elements in the sequence is equals to the given integer.
+
 #### ForEach
 
 Executes the given action on each element in the source sequence.
