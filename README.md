@@ -128,3 +128,7 @@ Skips items from the input sequence until the given predicate returns true, when
 Transfoorms all of the elements in the sequence and returns the transformed results.
 
 </details>
+
+## Documentation
+
+The Risotto documentation is [available here](https://github.com/Kalkwst/Risotto/wiki)
