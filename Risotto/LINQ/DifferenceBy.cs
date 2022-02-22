@@ -35,7 +35,7 @@ namespace Risotto.LINQ
 		/// and not the <b>transformed</b> <paramref name="target"/> sequence, without filtering duplicates.</returns>
 		/// <exception cref="ArgumentNullException"> if <paramref name="source"/>, <paramref name="target"/>, <paramref name="fn"/> or <paramref name="comparer"/> are null.</exception>
 		/// <seealso cref="Difference{T}(IEnumerable{T}, IEnumerable{T}, IEqualityComparer{T})"/>
-		public static IEnumerable<TResult> DifferenceBy<TSource, TResult>(this IEnumerable<TSource> source, IEnumerable<TSource> target, Func<TSource, TResult> fn, EqualityComparer<TResult> comparer)
+		public static IEnumerable<TResult> DifferenceBy<TSource, TResult>(this IEnumerable<TSource> source, IEnumerable<TSource> target, Func<TSource, TResult> fn, IEqualityComparer<TResult> comparer)
 		{
 			if (source == null)
 				throw new ArgumentNullException(nameof(source));
