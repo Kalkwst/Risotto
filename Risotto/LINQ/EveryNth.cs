@@ -17,7 +17,7 @@ namespace Risotto.LINQ
 			if (source == null)
 				throw new ArgumentNullException(nameof(source));
 			if (n <= 0)
-				throw new ArgumentException(nameof(n) + " must be greater than 0.");
+				throw new ArgumentOutOfRangeException(nameof(n) + " must be greater than 0.");
 
 			int count = 0;
 

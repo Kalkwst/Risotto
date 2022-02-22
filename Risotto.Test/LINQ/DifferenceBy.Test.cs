@@ -23,10 +23,10 @@ namespace Risotto.Test
 		[Test]
 		public void DifferenceByNullTargetSequence()
 		{
-			int[] array = new int[] { 1, 2, 3 };
-			int[] array2 = null;
+			var array = new string[] { "a", "b", "c", "D", "e" };
+			var array2 = new string[] { "A", "d", "e" };
 
-			Assert.Throws<ArgumentNullException>(() => array.DifferenceBy(array2, (x) => x * x));
+			array.DifferenceBy(array2, x => x.ToUpper(), StringComparer.OrdinalIgnoreCase);
 		}
 
 		[Test]

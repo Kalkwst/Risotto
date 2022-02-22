@@ -18,14 +18,14 @@ namespace Risotto.Test
 		public void EveryNthZeroStep()
 		{
 			int[] sequence = new int[] { 1, 2, 3 };
-			Assert.Throws<ArgumentException>(() => sequence.EveryNth(0));
+			Assert.Throws<ArgumentOutOfRangeException>(() => sequence.EveryNth(0));
 		}
 
 		[Test]
 		public void EveryNthNegativeStep()
 		{
 			int[] sequence = new int[] { 1, 2, 3 };
-			Assert.Throws<ArgumentException>(() => sequence.EveryNth(-1));
+			Assert.Throws<ArgumentOutOfRangeException>(() => sequence.EveryNth(-1));
 		}
 
 		[Test]
