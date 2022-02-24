@@ -7,7 +7,7 @@ namespace Risotto.LINQ
 	static partial class LINQExtensions
 	{
 		/// <summary>
-		/// Extracts a rtion of a sequence into a new sequence selected from <paramref name="start"/> to <paramref name="end"/> (including <paramref name="end"/>), 
+		/// Extracts a portion of a sequence into a new sequence selected from <paramref name="start"/> to <paramref name="end"/> (including <paramref name="end"/>), 
 		/// where <paramref name="start"/> and <paramref name="end"/> represent the index of items in that sequence.
 		/// </summary>
 		/// <typeparam name="TSource">The type of the sequence's elements.</typeparam>
