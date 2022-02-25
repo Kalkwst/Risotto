@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Risotto
+namespace Risotto.LINQ
 {
 	static partial class LINQExtensions
 	{
