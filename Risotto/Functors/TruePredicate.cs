@@ -9,15 +9,12 @@
 		/// Singleton predicate instance
 		/// </summary>
 		public static readonly IPredicate<T> Instance = new TruePredicate<T>();
-		
+
 		/// <summary>
 		/// Factory returning the singleton instance.
 		/// </summary>
 		/// <returns>The singleton instance</returns>
-		public static IPredicate<T> GetTruePredicate()
-		{
-			return Instance;
-		}
+		public static IPredicate<T> GetTruePredicate => Instance;
 
 		private TruePredicate() { }
 
