@@ -33,3 +33,5 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
       working-directory: Risotto.Test
+    - name: Code Climate Coverage Action
+      uses: paambaati/codeclimate-action@v3.0.0
