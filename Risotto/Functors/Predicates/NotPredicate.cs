@@ -1,5 +1,8 @@
 ﻿namespace Risotto.Functors
 {
+	/// <summary>
+	/// Predicate implementation that returns the opposite of the decorated predicate.
+	/// </summary>
 	public class NotPredicate<T> : IPredicate<T>
 	{
 		/// <summary>

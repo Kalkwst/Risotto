@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 
 namespace Risotto.Functors.Predicates
 {
+	/// <summary>
+	/// Predicate implementation that returns true if none of the
+	/// predicates return true. If the array is empty, then this predicate
+	/// returns true.
+	/// </summary>
+	/// <typeparam name="T"></typeparam>
 	public class NonePredicate<T> : IPredicate<T>
 	{
 		private readonly IPredicate<T>[] _predicates;

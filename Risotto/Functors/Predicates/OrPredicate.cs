@@ -1,5 +1,9 @@
 ﻿namespace Risotto.Functors
 {
+	/// <summary>
+	/// Predicate implementation that returns true if either of the predicates return true.
+	/// </summary>
+	/// <typeparam name="T">The type parameter of the predicate</typeparam>
 	public class OrPredicate<T> : IPredicate<T>
 	{
 		/// <summary>

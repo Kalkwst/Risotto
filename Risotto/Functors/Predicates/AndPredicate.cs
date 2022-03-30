@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Risotto.Functors
+﻿namespace Risotto.Functors
 {
+	/// <summary>
+	/// Predicate implementation that returns true if both the predicates return true.
+	/// </summary>
+	/// <typeparam name="T">The type parameter of the Predicate</typeparam>
 	public class AndPredicate<T> : IPredicate<T>
 	{
 		/// <summary>

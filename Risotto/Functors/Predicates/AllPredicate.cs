@@ -1,18 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Risotto.Functors.Predicates
 {
+	/// <summary>
+	/// Predicate implementation that returns true if and only if
+	/// all of the internal predicates returns true.
+	/// </summary>
+	/// <typeparam name="T">The type parameter of the predicate</typeparam>
 	public class AllPredicate<T> : IPredicate<T>
 	{
+		/// <summary>
+		/// Internal buffer for predicates used in evaluation
+		/// </summary>
 		private readonly IPredicate<T>[] _predicates;
 
 		/// <summary>
 		/// Factory to create a new predicate
 		/// </summary>
+		/// <typeparam name="T">The type parameter of the predicates </typeparam>
+		/// <param name="predicates">The list of predicates to be used for the evaluation.</param>
+		/// <returns>An instance of the <see cref="AllPredicate{T}"/> predicate</returns>
+		/// <exception cref="ArgumentNullException">if the predicates array is null</exception>
+		/// <exception cref="ArgumentNullException">if any predicate in the array is null</exception>
+		/// <remarks>
+		/// If the array is of size zero, the predicate always returns true.
+		/// </remarks>
 		public static IPredicate<T> GetAllPredicate(params IPredicate<T>[] predicates)
 		{
 			FunctorUtils.Validate(predicates);
@@ -25,6 +37,14 @@ namespace Risotto.Functors.Predicates
 		/// <summary>
 		/// Factory to create a new predicate
 		/// </summary>
+		/// <typeparam name="T">The type parameter of the predicates </typeparam>
+		/// <param name="predicates">The list of predicates to be used for the evaluation.</param>
+		/// <returns>An instance of the <see cref="AllPredicate{T}"/> predicate</returns>
+		/// <exception cref="ArgumentNullException">if the predicates array is null</exception>
+		/// <exception cref="ArgumentNullException">if any predicate in the array is null</exception>
+		/// <remarks>
+		/// If the array is of size zero, the predicate always returns true.
+		/// </remarks>
 		public static IPredicate<T> GetAllPredicate(ICollection<IPredicate<T>> predicates)
 		{
 			IPredicate<T>[] predicateArray = FunctorUtils.ToPredicateArray(predicates);
