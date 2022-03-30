@@ -60,7 +60,7 @@ namespace Risotto.Functors
 		internal static IPredicate<T>[] ToPredicateArray<T>(ICollection<IPredicate<T>> predicates)
 		{
 			Validate(predicates);
-			return predicates.ToArray();
+			return Copy(predicates.ToArray());
 		}
 	}
 }
