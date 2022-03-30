@@ -33,5 +33,6 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
       working-directory: Risotto.Test
-    - name: Code Climate Coverage Action
-      uses: paambaati/codeclimate-action@v3.0.0
+    - name: Codecov
+      uses: codecov/codecov-action@v2.1.0
+
