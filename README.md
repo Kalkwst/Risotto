@@ -19,10 +19,12 @@
     <img src="https://img.shields.io/codeclimate/maintainability-percentage/Kalkwst/Risotto"/>
     <!-- Code Coverage -->
     <img src="https://img.shields.io/codecov/c/github/Kalkwst/Risotto"/>
+    <!-- Contributions -->
+    <img src="https://img.shields.io/badge/Contributions-welcome-brightgreen"/>
+    <!-- Licence -->
+    <img src="https://img.shields.io/github/license/Kalkwst/Risotto"/>
 </div>
 
-
-![license](https://img.shields.io/github/license/Kalkwst/Risotto)
 
 ## 📖 Table of Contents
 
