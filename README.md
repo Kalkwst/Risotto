@@ -15,6 +15,8 @@
 <div align="center">
     <!--Build status -->
     <img src="https://img.shields.io/github/workflow/status/Kalkwst/Risotto/CI/develop"/>
+    <!-- Maintainability -->
+    <img src="https://img.shields.io/codeclimate/maintainability-percentage/Kalkwst/Risotto"/>
 </div>
 
 
