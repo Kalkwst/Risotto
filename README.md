@@ -7,10 +7,16 @@
     <strong>A powerful library for handling enumerables and collections</strong>
 </div>
 <div align="center">
-    Created by mentally unstable developers
+    Created by mentally unstable developers 
 </div>
 
 </br>
+
+<div align="center">
+    <img src="https://forthebadge.com/images/badges/made-with-c-sharp.svg"/> 
+    <img src="https://forthebadge.com/images/badges/built-with-grammas-recipe.svg"/> 
+    <img src="https://forthebadge.com/images/badges/works-on-my-machine.svg" style="max-width: 100%;height: 35px;"/>
+</div>
 
 <div align="center">
     <!--Build status -->
