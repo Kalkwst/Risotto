@@ -1,4 +1,16 @@
-# Risotto
+<h1 align="center">Risotto</h1>
+
+<div align="center">
+    <img src="https://images.emojiterra.com/google/android-11/512px/1f35a.png" alt="Rissoto" style="max-width:100%; width:25%"/>
+</div>
+<div align="center">
+    <strong>A powerful library for handling enumerables and collections</strong>
+</div>
+<div align="center">
+    Created by mentally unstable developers
+</div>
+
+
 ![build](https://img.shields.io/github/workflow/status/Kalkwst/Risotto/CI/develop)
 ![license](https://img.shields.io/github/license/Kalkwst/Risotto)
 
