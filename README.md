@@ -17,6 +17,8 @@
     <img src="https://img.shields.io/github/workflow/status/Kalkwst/Risotto/CI/develop"/>
     <!-- Maintainability -->
     <img src="https://img.shields.io/codeclimate/maintainability-percentage/Kalkwst/Risotto"/>
+    <!-- Code Coverage -->
+    <img src="https://img.shields.io/codecov/c/github/Kalkwst/Risotto"/>
 </div>
 
 
