@@ -10,8 +10,14 @@
     Created by mentally unstable developers
 </div>
 
+</br>
 
-![build](https://img.shields.io/github/workflow/status/Kalkwst/Risotto/CI/develop)
+<div align="center">
+    <!--Build status -->
+    <img src="https://img.shields.io/github/workflow/status/Kalkwst/Risotto/CI/develop"/>
+</div>
+
+
 ![license](https://img.shields.io/github/license/Kalkwst/Risotto)
 
 ## 📖 Table of Contents
