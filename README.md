@@ -33,7 +33,7 @@
 
 <div align="center">
     <h3>
-        <a href="">
+        <a href="https://github.com/Kalkwst/Risotto/wiki">
             Handbook
         </a>
         <span> | </span>
