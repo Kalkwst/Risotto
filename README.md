@@ -54,3 +54,17 @@
     contributors
   </a>
 </div>
+
+---
+    
+## About Risotto
+
+**Risotto** is a library that enhances the features of ICollections and IEnumerables. The library seeks to build upon the C# data structures by providing new interfaces, implementations and utilities. 
+
+---
+
+## Table of Contents
+    
+---
+    
+## Motivation
