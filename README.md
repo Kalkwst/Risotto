@@ -50,7 +50,7 @@
 <div align="center">
   <sub>Built with ❤︎ by
   <a href="">Kostas Kalafatis</a> and
-  <a href="">
+  <a href="https://imgflip.com/i/6atc9k">
     contributors
   </a>
 </div>
