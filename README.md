@@ -54,3 +54,23 @@
     contributors
   </a>
 </div>
+
+---
+    
+## About Risotto
+
+**Risotto** is a library that enhances the features of ICollections and IEnumerables. The library seeks to build upon the C# data structures by providing new interfaces, implementations and utilities. 
+
+---
+
+## Table of Contents
+    
+---
+    
+## Features
+
+The library provides many features, including:
+
+- Enhancing decorators that provide additional functionality to existing collection implementations
+- Transforming decorators that alter each object as it is added to the collection
+- LINQ to Objects methods that add more features, in a manner which keeps to the spirit of LINQ
