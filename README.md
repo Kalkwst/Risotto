@@ -41,7 +41,7 @@
             Examples
         </a>
         <span> | </span>
-        <a href="">
+        <a href="https://github.com/Kalkwst/Risotto/blob/master/CONTRIBUTING.md">
             Contributing
         </a>
    </h3>
