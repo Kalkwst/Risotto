@@ -74,3 +74,13 @@ The library provides many features, including:
 - Enhancing decorators that provide additional functionality to existing collection implementations
 - Transforming decorators that alter each object as it is added to the collection
 - LINQ to Objects methods that add more features, in a manner which keeps to the spirit of LINQ
+    
+## FAQ
+    
+### Why is it called Risotto?
+
+
+    
+### Are you making fun of people living with a mental health issue?
+    
+Definitely not. This is a running gag between the creator of this library and his colleagues, refering to his tendency to concoct various monstrous solutions for non existing problems. Something like a mad scientist of sorts.
