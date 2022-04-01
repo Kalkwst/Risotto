@@ -11,7 +11,7 @@ namespace Risotto.Test.List
 		[Test]
 		public void TestElementCreationWithGenerator()
 		{
-			IGenerator<int> constantGenerator = new ConstantGenerator<int>(24);
+			IGenerator<int> constantGenerator = ConstantGenerator<int>.GetInstance(24);
 			IList<int> list = LazyList<int>.GetInstance(new List<int>(), constantGenerator);
 
 			Assert.True(list.Count == 0);
@@ -37,7 +37,7 @@ namespace Risotto.Test.List
 		[Test]
 		public void TestCreateDefaultGapsWithGenerator()
 		{
-			IGenerator<int> constantTransformer = new ConstantGenerator<int>(97);
+			IGenerator<int> constantTransformer = ConstantGenerator<int>.GetInstance(97);
 			IList<int> list = LazyList<int>.GetInstance(new List<int>(), constantTransformer);
 
 			Assert.True(list.Count == 0);
@@ -63,7 +63,7 @@ namespace Risotto.Test.List
 		[Test]
 		public void TestGetWithNull()
 		{
-			IGenerator<int> constantGenerator = new ConstantGenerator<int>(88);
+			IGenerator<int> constantGenerator = ConstantGenerator<int>.GetInstance(88);
 			IList<int> list = LazyList<int>.GetInstance(new List<int>(), constantGenerator);
 
 			Assert.True(list.Count == 0);
