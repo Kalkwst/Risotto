@@ -5,11 +5,6 @@
 	/// </summary>
 	public class ConstantGenerator<T> : IGenerator<T>
 	{
-		/// <summary>
-		/// Returns default each time
-		/// </summary>
-		public static readonly ConstantGenerator<T> DEFAULT_INSTANCE = new(default);
-
 		private readonly T constant;
 
 		/// <summary>
@@ -19,9 +14,6 @@
 		/// <returns>the <c>constant</c> factory</returns>
 		public static ConstantGenerator<T> GetInstance(T constantToReturn)
 		{
-			if (constantToReturn == null)
-				return DEFAULT_INSTANCE;
-
 			return new ConstantGenerator<T>(constantToReturn);
 		}
 
@@ -30,7 +22,7 @@
 		/// Use <see cref="GetInstance(T)"/> if you need that.
 		/// </summary>
 		/// <param name="constant">the constant to return each time</param>
-		public ConstantGenerator(T constant)
+		private ConstantGenerator(T constant)
 		{
 			this.constant = constant;
 		}
