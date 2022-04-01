@@ -36,7 +36,7 @@ namespace Risotto
 		public static T RequireNonNull<T>(T obj, string message)
 		{
 			if (obj == null)
-				throw new ArgumentNullException(message);
+				throw new ArgumentNullException("", message);
 
 			return obj;
 		}
