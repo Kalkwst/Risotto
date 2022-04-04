@@ -24,7 +24,7 @@ namespace Risotto.Test.List
 		[Test]
 		public void TestElementCreationWithTransformer()
 		{
-			ITransformer<int, int> constantTransformer = new ConstantTransformer<int, int>(1);
+			ITransformer<int, int> constantTransformer = ConstantTransformer<int, int>.GetInstance(1);
 			IList<int> list = LazyList<int>.GetInstance(new List<int>(), constantTransformer);
 
 			Assert.True(list.Count == 0);
@@ -50,7 +50,7 @@ namespace Risotto.Test.List
 		[Test]
 		public void TestCreateDefaultGapsWithTransformer()
 		{
-			ITransformer<int, int> constantTransformer = new ConstantTransformer<int, int>(97);
+			ITransformer<int, int> constantTransformer = ConstantTransformer<int, int>.GetInstance(97);
 			IList<int> list = LazyList<int>.GetInstance(new List<int>(), constantTransformer);
 
 			Assert.True(list.Count == 0);
