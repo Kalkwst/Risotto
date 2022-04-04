@@ -50,7 +50,7 @@
 <div align="center">
   <sub>Built with ❤︎ by
   <a href="">Kostas Kalafatis</a> and
-  <a href="https://imgflip.com/i/6atc9k">
+  <a href="https://github.com/Kalkwst/Risotto/graphs/contributors">
     contributors
   </a>
 </div>
