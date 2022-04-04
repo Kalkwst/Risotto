@@ -15,6 +15,11 @@ namespace Risotto.LINQ
 		/// <exception cref="InvalidOperationException">If the input sequence contains an invalid element.</exception>
 		public static IEnumerable<TSource> Attempt<TSource>(this IEnumerable<TSource> source, Func<TSource, bool> fn)
 		{
+			if (fn == null)
+				throw new ArgumentNullException(nameof(fn));
+			if (source == null)
+				throw new ArgumentNullException(nameof(source));
+
 			return Attempt(source, fn, null);
 		}
 
@@ -29,11 +34,6 @@ namespace Risotto.LINQ
 		/// <exception cref="InvalidOperationException">If the input sequence contains an invalid element.</exception>
 		public static IEnumerable<TSource> Attempt<TSource>(this IEnumerable<TSource> source, Func<TSource, bool> fn, Func<TSource, Exception> errorHandler)
 		{
-			if (source == null)
-				throw new ArgumentNullException(nameof(source));
-			if (fn == null)
-				throw new ArgumentNullException(nameof(fn));
-
 			foreach (var element in source)
 			{
 				if (!fn(element))

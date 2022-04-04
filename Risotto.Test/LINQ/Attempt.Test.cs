@@ -1,12 +1,29 @@
 ﻿using NUnit.Framework;
 using Risotto.LINQ;
 using System;
+using System.Collections.Generic;
 
 namespace Risotto.Test.LINQExtensions
 {
 	[TestFixture]
 	public class AttemptTests
 	{
+		[Test]
+		public void FunctionArgumentNullException()
+		{
+			IEnumerable<int> source = null;
+
+			Assert.Throws<ArgumentNullException>(() => source.Attempt(fn: null));
+		}
+
+		[Test]
+		public void SourceArgumentNullException()
+		{
+			IEnumerable<int> source = null;
+
+			Assert.Throws<ArgumentNullException>(() => source.Attempt(null));
+		}
+
 		[Test]
 		public void AttemptSequenceAllValidElements()
 		{
