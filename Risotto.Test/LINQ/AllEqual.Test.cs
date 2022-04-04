@@ -91,6 +91,7 @@ namespace Risotto.Test.LINQExtensions
 			Assert.That(ex.Message, Is.EqualTo("Value cannot be null. (Parameter 'comparer')"));
 		}
 
+		[Test]
 		public void AllEqualNullComparer()
 		{
 			var ex = Assert.Throws<ArgumentNullException>(
