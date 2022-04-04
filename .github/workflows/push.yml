@@ -1,4 +1,4 @@
-name: .NET
+name: Push
 
 on:
   [push]
@@ -6,7 +6,7 @@ on:
 jobs:
   build:
 
-    runs-on: [ubuntu-latest, windows-latest]
+    runs-on: [windows-latest]
     strategy:
       matrix:
         dotnet: ['5.0.x'] 
