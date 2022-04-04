@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Risotto.Functors
+﻿namespace Risotto.Functors
 {
 	public class ConstantTransformer<I, O> : ITransformer<I, O>
 	{
-		public static readonly ITransformer<I, O> DEFAULT_INSTANCE = new ConstantTransformer<I, O>(default);
-
 		private readonly O constant;
 
 		public static ITransformer<I, O> GetInstance(O constantToReturn)
@@ -17,7 +9,7 @@ namespace Risotto.Functors
 			return new ConstantTransformer<I, O>(constantToReturn);
 		}
 
-		public ConstantTransformer(O constant)
+		private ConstantTransformer(O constant)
 		{
 			this.constant = constant;
 		}

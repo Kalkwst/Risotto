@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Risotto.LINQ
 {
@@ -53,7 +51,7 @@ namespace Risotto.LINQ
 		/// <param name="fn">The mapping function.</param>
 		/// <returns><c>True</c> if all of the elements in the IEnumerable are equal, <c>False</c> otherwise.</returns>
 		/// <exception cref="ArgumentNullException"> if <paramref name="source"/>, or <paramref name="fn"/> is null.</exception>
-		public static bool AllEqual<TSource, TValue>(IEnumerable<TSource> source, Func<TSource, TValue> fn)
+		public static bool AllEqual<TSource, TValue>(this IEnumerable<TSource> source, Func<TSource, TValue> fn)
 		{
 			return AllEqual(source, fn, EqualityComparer<TValue>.Default);
 		}
