@@ -54,6 +54,12 @@ namespace Risotto.Bag
 		/// <param name="copies">the number of copies to add</param>
 		/// <returns><c>true</c> if the object was not already in the Bag, false otherwise.</returns>
 		public bool Add(T item, int copies);
+		/// <summary>
+		/// Add all elements of the enumerable to the Bag.
+		/// </summary>
+		/// <param name="items">the items to add</param>
+		/// <returns>true if this call changed the Bag.</returns>
+		public bool AddAll(IEnumerable<T> items);
 
 		/// <summary>
 		/// <i>Hiding</i><br/>
@@ -90,12 +96,6 @@ namespace Risotto.Bag
 		/// </summary>
 		/// <returns>the <see cref="ISet{T}"/> of unique Bag elements</returns>
 		public ISet<T> AsSet();
-
-		/// <summary>
-		/// Returns the total number of items in the Bag across all types.
-		/// </summary>
-		/// <returns>the total size of the Bag</returns>
-		public int Size();
 
 		/// <summary>
 		/// Returns true if the Bag contains all elements in 
