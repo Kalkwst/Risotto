@@ -1,25 +1,29 @@
-name: .NET
+name: Push
 
 on:
   [push]
 
 jobs:
   build:
-
-    runs-on: [ubuntu-latest, windows-latest]
+    runs-on: [windows-latest]
     strategy:
       matrix:
         dotnet: ['5.0.x'] 
     steps:
-    - uses: actions/checkout@v3
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v2
+    - name: Checkout
+      uses: actions/checkout@v2
       with:
-        dotnet-version: 5.0.x
+        fetch-depth: 0
+    - name: Setup ${{ matrix.dotnet }}
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: ${{ matrix.dotnet }}
     - name: Restore dependencies
       run: dotnet restore
+      working-directory: Risotto
     - name: Build
       run: dotnet build --no-restore /p:ContinuousIntegrationBuild=true
       working-directory: Risotto
     - name: Test
       run: dotnet test --no-build --verbosity normal /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
+      working-directory: Risotto.Test
