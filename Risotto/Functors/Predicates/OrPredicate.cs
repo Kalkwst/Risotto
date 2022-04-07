@@ -19,7 +19,7 @@
 		/// <summary>
 		/// Factory to create a new predicate
 		/// </summary>
-		public static IPredicate<T> GetPrPredicate(IPredicate<T> first, IPredicate<T> second)
+		public static IPredicate<T> GetOrPredicate(IPredicate<T> first, IPredicate<T> second)
 		{
 			return new OrPredicate<T>(first, second);
 		}
