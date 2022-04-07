@@ -8,6 +8,14 @@ namespace Risotto
 {
 	public interface IPredicate<T>
 	{
-		bool Evaluate(T value);
+		public void Add(IPredicate<T> predicate);
+
+		public void Remove(IPredicate<T> predicate);
+
+		public bool IsComposite();
+
+		public bool Evaluate(T value);
+
+
 	}
 }
