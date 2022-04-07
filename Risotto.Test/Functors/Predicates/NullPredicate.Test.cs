@@ -16,7 +16,7 @@ namespace Risotto.Test.Functors.Predicates
 		[Test]
 		public void NullPredicateNullValue()
 		{
-			var predicate = NullPredicate<int?>.Instance;
+			var predicate = NullPredicate<int?>.GetNullPredicate();
 			Assert.IsTrue(predicate.Evaluate(null));
 		}
 	}
