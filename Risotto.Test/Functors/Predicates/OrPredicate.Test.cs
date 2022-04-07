@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using Risotto.Functors;
+using System;
 
 namespace Risotto.Test.Functors.Predicates
 {
@@ -7,6 +8,26 @@ namespace Risotto.Test.Functors.Predicates
 	{
 		private readonly TruePredicate<int> truePredicate = (TruePredicate<int>)TruePredicate<int>.Instance;
 		private readonly FalsePredicate<int> falsePredicate = (FalsePredicate<int>)FalsePredicate<int>.Instance;
+
+		[Test]
+		public void TestOrNullFirstPredicate()
+		{
+			var ex = Assert.Throws<ArgumentNullException>(
+				() =>
+				{
+					var predicate = (OrPredicate<int>)OrPredicate<int>.GetOrPredicate(null, falsePredicate);
+				});
+		}
+
+		[Test]
+		public void TestOrNullSecodPredicate()
+		{
+			var ex = Assert.Throws<ArgumentNullException>(
+				() =>
+				{
+					var predicate = (OrPredicate<int>)OrPredicate<int>.GetOrPredicate(truePredicate, null);
+				});
+		}
 
 		[Test]
 		public void TestOrPredicateFalseFalse()
