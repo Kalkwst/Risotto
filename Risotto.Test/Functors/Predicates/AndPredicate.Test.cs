@@ -36,5 +36,15 @@ namespace Risotto.Test.Functors.Predicates
 			var predicate = AndPredicate<int>.GetAndPredicate(truePredicate, truePredicate);
 			Assert.IsTrue(predicate.Evaluate(12));
 		}
+
+		[Test]
+		public void AndPredicateGetPredicates()
+		{
+			AndPredicate<int> predicate = (AndPredicate<int>)AndPredicate<int>.GetAndPredicate(truePredicate, truePredicate);
+			var predicates = predicate.GetPredicates();
+
+			Assert.That(predicates, Is.Not.Null);
+			Assert.That(predicates, Is.Not.Empty);
+		}
 	}
 }
