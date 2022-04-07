@@ -37,21 +37,21 @@ namespace Risotto.LINQ
 			if (source == null)
 				throw new ArgumentNullException(nameof(source));
 			if (comparer == null)
-				throw new ArgumentNullException(nameof(source));
+				throw new ArgumentNullException(nameof(comparer));
 
 			List<T> sourceList = source.ToList();
 			IEnumerable<T> distinct = new HashSet<T>(source, comparer);
 
-			return null; 
+			return _();
 
-			/*IEnumerable<T> _()
+			IEnumerable<T> _()
 			{
-				foreach(T element in distinct)
+				foreach (T element in distinct)
 				{
-					if (comparer.Equals(sourceList.IndexOf(element), sourceList.LastIndexOf(element))
+					if (sourceList.IndexOf(element, comparer) == sourceList.LastIndexOf(element, comparer))
 						yield return element;
 				}
-			}*/
+			}
 		}
 	}
 }

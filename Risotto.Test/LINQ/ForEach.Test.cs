@@ -31,21 +31,21 @@ namespace Risotto.Test.LINQExtensions
         public void ForEachFuncNullSource()
 		{
             IEnumerable<int> source = null;
-            Assert.Throws<ArgumentNullException>(()=> source.ForEach<int>((x) => x * x));
+            Assert.Throws<ArgumentNullException>(()=> source.ForEach((x) => x * x));
 		}
 
         [Test]
         public void ForEachFuncNullDelegate()
 		{
             IEnumerable<int> source = new int[] { 1, 2, 3 };
-            Assert.Throws<ArgumentNullException>(() => source.ForEach<int>(null));
+            Assert.Throws<ArgumentNullException>(() => source.ForEach<int, int>(null));
 		}
 
         [Test]
         public void ForEachFuncWithSequence()
 		{
             var source = new int[] { 1, 2, 3, 4, 5 };
-            var result = source.ForEach<int>((x) => x * x);
+            var result = source.ForEach<int,int>((x) => x * x);
 
             Assert.That(result, Is.EqualTo(new int[] { 1, 4, 9, 16, 25 }));
 		}
