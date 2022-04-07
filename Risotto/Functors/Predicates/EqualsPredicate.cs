@@ -46,7 +46,7 @@ namespace Risotto.Functors
 			if (value == null)
 				return NullPredicate<T>.GetNullPredicate();
 
-			return new EqualsPredicate(value, comparer);
+			return new EqualsPredicate<T>(value, comparer);
 		}
 
 		/// <summary>
