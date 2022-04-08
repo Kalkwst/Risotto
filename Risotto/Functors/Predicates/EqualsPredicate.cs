@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Risotto.Functors
 {
 	/// <summary>
-	/// Predicate implementation that returns true if the input is the same object
+	/// Predicate implementation that returns true if the input is the same value
 	/// as the one stored in this predicate.
 	/// </summary>
 	public class EqualsPredicate<T> : IPredicate<T>
@@ -22,47 +18,11 @@ namespace Risotto.Functors
 		/// </summary>
 		private readonly IEqualityComparer<T> _comparer;
 
-		/// <summary>
-		/// Factory to create the predicate
-		/// </summary>
-		/// <param name="value">The internal value</param>
-		/// <returns>The predicate</returns>
-		public static IPredicate<T> GetEqualPredicate(T value)
-		{
-			if (value == null)
-				return NullPredicate<T>.GetNullPredicate();
+		public EqualsPredicate(T value): this(value, EqualityComparer<T>.Default) {}
 
-			return new EqualsPredicate<T>(value);
-		}
-
-		/// <summary>
-		/// Factory to create the predicate
-		/// </summary>
-		/// <param name="value">The internal value</param>
-		/// <param name="comparer">The comparer to use for comparison</param>
-		/// <returns>The predicate</returns>
-		public static IPredicate<T> GetEqualPredicate(T value, IEqualityComparer<T> comparer)
-		{
-			if (value == null)
-				return NullPredicate<T>.GetNullPredicate();
-
-			return new EqualsPredicate<T>(value, comparer);
-		}
-
-		/// <summary>
-		/// Restrictive constructor 
-		/// </summary>
-		private EqualsPredicate(T value)
+		public EqualsPredicate(T value, IEqualityComparer<T> comparer)
 		{
 			_value = value;
-			_comparer = EqualityComparer<T>.Default;
-		}
-
-		/// <summary>
-		/// Restrictive constructor
-		/// </summary>
-		private EqualsPredicate(T value, IEqualityComparer<T> comparer) : this(value)
-		{
 			_comparer = comparer;
 		}
 
