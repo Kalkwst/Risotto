@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Risotto.Functors.Predicates
 {
@@ -39,41 +36,15 @@ namespace Risotto.Functors.Predicates
 		/// </summary>
 		private readonly Criterion _criterion;
 
-		/// <summary>
-		/// Factory to create the comparer predicate
-		/// </summary>
-		/// <typeparam name="T">The type that the predicate queries</typeparam>
-		/// <param name="value">the value to compare to</param>
-		/// <param name="comparer">The comparer to use for comparison</param>
-		/// <returns>The predicate</returns>
-		/// <exception cref="ArgumentNullException">if comparator or criterion is null</exception>
-		public static IPredicate<T> GetComparerPredicate(T value, IComparer<T> comparer)
+		public ComparerPredicate(T value, IComparer<T> comparer): this(value, comparer, Criterion.EQUAL)
 		{
-			return GetComparerPredicate(value, comparer, Criterion.EQUAL);
 		}
 
-		/// <summary>
-		/// Factory to create the comparer predicate
-		/// </summary>
-		/// <typeparam name="T">The type that the predicate queries</typeparam>
-		/// <param name="value">the value to compare to</param>
-		/// <param name="comparer">The comparer to use for comparison</param>
-		/// <param name="criterion">The criterion to use to evaluate comparison</param>
-		/// <returns>The predicate</returns>
-		/// <exception cref="ArgumentNullException">if comparator or criterion is null</exception>
-		public static IPredicate<T> GetComparerPredicate(T value, IComparer<T> comparer, Criterion criterion)
+		public ComparerPredicate(T value, IComparer<T> comparer, Criterion criterion)
 		{
-			Objects.RequireNonNull(comparer, nameof(comparer));
-			Objects.RequireNonNull(criterion, nameof(criterion));
-
-			return new ComparerPredicate<T>(value, comparer, criterion);
-		}
-
-		private ComparerPredicate(T value, IComparer<T> comparer, Criterion criterion)
-		{
-			this._value = value;
-			this._comparer = comparer;
-			this._criterion = criterion;
+			_value = value;
+			_comparer = comparer;
+			_criterion = criterion;
 		}
 
 		/// <summary>
