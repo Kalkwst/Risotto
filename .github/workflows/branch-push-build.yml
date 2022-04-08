@@ -1,7 +1,11 @@
-name: Push
+name: Build workflow for push
 
 on:
-  [push]
+  push:
+    branches: [feature/*]
+    paths:
+    - '**.cs'
+    - '**.csproj'
 
 jobs:
   build:
@@ -24,8 +28,3 @@ jobs:
     - name: Build
       run: dotnet build --no-restore /p:ContinuousIntegrationBuild=true
       working-directory: Risotto
-    - name: Test
-      run: dotnet test --no-build --verbosity normal /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
-      working-directory: Risotto.Test
-    - name: Codecov
-      uses: codecov/codecov-action@v2.1.0
