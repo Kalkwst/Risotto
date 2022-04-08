@@ -11,9 +11,10 @@ on:
 
 jobs:
   build:
-    runs-on: [windows-latest]
+    runs-on:  ${{ matrix.operating-system }}
     strategy:
       matrix:
+        operating-system: [ubuntu-latest, windows-latest, macOS-latest]
         dotnet: ['5.0.x'] 
     steps:
     - name: Checkout
