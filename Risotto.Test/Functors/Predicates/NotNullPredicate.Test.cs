@@ -9,14 +9,14 @@ namespace Risotto.Test.Functors.Predicates
 		[Test]
 		public void NotNullPredicateNotNullValue()
 		{
-			var predicate = NotNullPredicate<int>.GetNotNullPredicate;
+			var predicate = new NotNullPredicate<int>();
 			Assert.IsTrue(predicate.Evaluate(12));
 		}
 
 		[Test]
 		public void NotNullPredicateNullValue()
 		{
-			var predicate = NotNullPredicate<string>.GetNotNullPredicate;
+			var predicate = new NotNullPredicate<int?>();
 			Assert.IsFalse(predicate.Evaluate(null));
 		}
 	}

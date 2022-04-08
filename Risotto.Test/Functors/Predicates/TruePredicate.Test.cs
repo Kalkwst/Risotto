@@ -9,7 +9,7 @@ namespace Risotto.Test.Functors.Predicates
 		[Test]
 		public void TestAlwaysTruePredicate()
 		{
-			var predicate = TruePredicate<int>.GetTruePredicate;
+			var predicate = new TruePredicate<int>();
 			Assert.IsTrue(predicate.Evaluate(0));
 		}
 	}
