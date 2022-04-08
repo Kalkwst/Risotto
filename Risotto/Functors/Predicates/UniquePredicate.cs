@@ -14,16 +14,6 @@ namespace Risotto.Functors
 		private static readonly HashSet<T> _seen = new();
 
 		/// <summary>
-		/// Singleton predicate instance
-		/// </summary>
-		public static readonly UniquePredicate<T> Instance = new UniquePredicate<T>();
-
-		/// <summary>
-		/// Factory to create a new predicate
-		/// </summary>
-		public static UniquePredicate<T> GetUniquePredicate => Instance;
-
-		/// <summary>
 		/// Clears the internal set of the predicate.
 		/// </summary>
 		public static void ClearPredicate()
@@ -40,10 +30,5 @@ namespace Risotto.Functors
 		{
 			return _seen.Add(value);
 		}
-
-		/// <summary>
-		/// Restrictive constructor.
-		/// </summary>
-		private UniquePredicate() { }
 	}
 }
