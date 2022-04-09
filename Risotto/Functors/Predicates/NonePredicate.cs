@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Risotto.Functors.Predicates
 {
@@ -12,47 +9,40 @@ namespace Risotto.Functors.Predicates
 	/// returns true.
 	/// </summary>
 	/// <typeparam name="T"></typeparam>
-	public class NonePredicate<T> : IPredicate<T>
+	public class NonePredicate<T> : CompositePredicate<T>
 	{
-		private readonly IPredicate<T>[] _predicates;
+		/// <summary>
+		/// Base constructor.
+		/// </summary>
+		public NonePredicate() { }
 
 		/// <summary>
-		/// Factory to create a new predicate
+		/// Constructor adding all the predicates in the collection to this composite predicate.
 		/// </summary>
-
-		public static IPredicate<T> GetNonePredicate(params IPredicate<T>[] predicates)
-		{
-			FunctorUtils.Validate(predicates);
-			if (predicates.Length == 0)
-				return TruePredicate<T>.GetTruePredicate;
-
-			return new NonePredicate<T>(FunctorUtils.Copy(predicates));
-		}
+		/// <param name="predicates">An <see cref="ICollection{T}"/> of predicates to be added to the composite</param>
+		/// <exception cref="ArgumentNullException">if the collection is null, or none of the predicates in the collection is null</exception>
+		public NonePredicate(ICollection<IPredicate<T>> predicates) : base(FunctorUtils.ToPredicateArray(predicates)) { }
 
 		/// <summary>
-		/// Factory to create a new predicate
+		/// Constructor adding all the predicates in the array to this composite predicate.
 		/// </summary>
-		public static IPredicate<T> GetNonePredicate(ICollection<IPredicate<T>> predicates)
-		{
-			IPredicate<T>[] predicateArray = FunctorUtils.ToPredicateArray(predicates);
-			if (predicateArray.Length == 0)
-				return TruePredicate<T>.GetTruePredicate;
-
-			return new NonePredicate<T>(predicateArray);
-		}
-
-		private NonePredicate(IPredicate<T>[] predicates)
-		{
-			_predicates = predicates;
-		}
+		/// <param name="predicates">An array of predicates to be added to the composite</param>
+		/// <exception cref="ArgumentNullException">if the collection is null, or none of the predicates in the collection is null</exception>
+		public NonePredicate(params IPredicate<T>[] predicates) : base(predicates) { }
 
 		/// <summary>
-		/// Evaluates the predicate returning true if none of the predicates returns true
+		/// Evaluates the predicate. 
+		/// 
+		/// If the predicate list is empty, then the predicate will return true
+		/// If none of the internal predicates return true, then this predicate will return true.
 		/// </summary>
-		/// <param name="value">the input object</param>
-		/// <returns>true if none of the predicates returns true</returns>
-		public bool Evaluate(T value)
+		/// <param name="value">the value to be passed in the evaluation function</param>
+		/// <returns>true if none of the internal predicates return true, false otherwise</returns>
+		public override bool Evaluate(T value)
 		{
+			if (_predicates.Count == 0)
+				return true;
+
 			foreach (var pred in _predicates)
 			{
 				if (pred.Evaluate(value))
@@ -60,14 +50,6 @@ namespace Risotto.Functors.Predicates
 			}
 
 			return true;
-		}
-
-		/// <summary>
-		/// Get the predicates used in the evaluation
-		/// </summary>
-		public IPredicate<T>[] GetPredicates()
-		{
-			return _predicates;
 		}
 	}
 }

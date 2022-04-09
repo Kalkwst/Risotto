@@ -7,80 +7,48 @@ namespace Risotto.Functors.Predicates
 	/// all of the internal predicates returns true.
 	/// </summary>
 	/// <typeparam name="T">The type parameter of the predicate</typeparam>
-	public class AllPredicate<T> : IPredicate<T>
+	public class AllPredicate<T> : CompositePredicate<T>
 	{
 		/// <summary>
-		/// Internal buffer for predicates used in evaluation
+		/// Base constructor.
 		/// </summary>
-		private readonly IPredicate<T>[] _predicates;
+		public AllPredicate() { }
 
 		/// <summary>
-		/// Factory to create a new predicate
+		/// Constructor adding all the predicates in the collection to this composite predicate.
 		/// </summary>
-		/// <typeparam name="T">The type parameter of the predicates </typeparam>
-		/// <param name="predicates">The list of predicates to be used for the evaluation.</param>
-		/// <returns>An instance of the <see cref="AllPredicate{T}"/> predicate</returns>
-		/// <exception cref="ArgumentNullException">if the predicates array is null</exception>
-		/// <exception cref="ArgumentNullException">if any predicate in the array is null</exception>
-		/// <remarks>
-		/// If the array is of size zero, the predicate always returns true.
-		/// </remarks>
-		public static IPredicate<T> GetAllPredicate(params IPredicate<T>[] predicates)
-		{
-			FunctorUtils.Validate(predicates);
-			if (predicates.Length == 0)
-				return TruePredicate<T>.GetTruePredicate;
-
-			return new AllPredicate<T>(FunctorUtils.Copy(predicates));
-		}
+		/// <param name="predicates">An <see cref="ICollection{T}"/> of predicates to be added to the composite</param>
+		/// <exception cref="ArgumentNullException">if the collection is null, or any of the predicates in the collection is null</exception>
+		public AllPredicate(ICollection<IPredicate<T>> predicates) : base(FunctorUtils.ToPredicateArray(predicates)) { }
 
 		/// <summary>
-		/// Factory to create a new predicate
+		/// Constructor adding all the predicates in the array to this composite predicate.
 		/// </summary>
-		/// <typeparam name="T">The type parameter of the predicates </typeparam>
-		/// <param name="predicates">The list of predicates to be used for the evaluation.</param>
-		/// <returns>An instance of the <see cref="AllPredicate{T}"/> predicate</returns>
-		/// <exception cref="ArgumentNullException">if the predicates array is null</exception>
-		/// <exception cref="ArgumentNullException">if any predicate in the array is null</exception>
-		/// <remarks>
-		/// If the array is of size zero, the predicate always returns true.
-		/// </remarks>
-		public static IPredicate<T> GetAllPredicate(ICollection<IPredicate<T>> predicates)
-		{
-			IPredicate<T>[] predicateArray = FunctorUtils.ToPredicateArray(predicates);
-			if (predicateArray.Length == 0)
-				return TruePredicate<T>.GetTruePredicate;
-
-			return new AllPredicate<T>(predicateArray);
-		}
-
-		private AllPredicate(IPredicate<T>[] predicates)
-		{
-			_predicates = predicates;
-		}
+		/// <param name="predicates">An array of predicates to be added to the composite</param>
+		/// <exception cref="ArgumentNullException">if the collection is null, or any of the predicates in the collection is null</exception>
+		public AllPredicate(params IPredicate<T>[] predicates) : base(predicates) { }
 
 		/// <summary>
-		/// Evaluates the predicate returning true if none of the predicates returns true
+		/// Evaluates the predicate. 
+		/// 
+		/// If the predicate list is empty, then the predicate will return true
+		/// If all of the internal predicates return true, then this predicate will return true.
 		/// </summary>
-		/// <param name="value">the input object</param>
-		/// <returns>true if none of the predicates returns true</returns>
-		public bool Evaluate(T value)
+		/// <param name="value">the value to be passed in the evaluation function</param>
+		/// <returns>true if all of the internal predicates return true, false otherwise</returns>
+		public override bool Evaluate(T value)
 		{
-			foreach (var pred in _predicates)
+			if(_predicates.Count == 0)
+				return true;
+
+			foreach(var pred in _predicates)
 			{
-				if (!pred.Evaluate(value))
+				if(!pred.Evaluate(value))
 					return false;
 			}
 
 			return true;
 		}
-
-		/// <summary>
-		/// Get the predicates used in the evaluation
-		/// </summary>
-		public IPredicate<T>[] GetPredicates()
-		{
-			return _predicates;
-		}
 	}
+
 }
