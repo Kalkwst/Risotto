@@ -53,11 +53,11 @@ namespace Risotto.Functors.Predicates
 		/// <summary>
 		/// Evaluate the predicate the predicate evaluates to true in the following cases:
 		/// <list type="bullet">
-		/// <item>Compare(target, value) == 0 &amp;&amp; criterion == EQUAL</item>
-		/// <item>Compare(target, value) &lt; 0 &amp;&amp; criterion == LESS</item>
-		/// <item>Compare(target, value) &lt;= 0 &amp;&amp; criterion == LESS_OR_EQUAL</item>
-		/// <item>Compare(target, value) &gt; 0 &amp;&amp; criterion == GREATER</item>
-		/// <item>Compare(target, value) &gt;= 0 &amp;&amp; criterion == GREATER_OR_EQUAL</item>
+		/// <item>Compare(value, target) == 0 &amp;&amp; criterion == EQUAL</item>
+		/// <item>Compare(value, target) &lt; 0 &amp;&amp; criterion == LESS</item>
+		/// <item>Compare(value, target) &lt;= 0 &amp;&amp; criterion == LESS_OR_EQUAL</item>
+		/// <item>Compare(value, target) &gt; 0 &amp;&amp; criterion == GREATER</item>
+		/// <item>Compare(value, target) &gt;= 0 &amp;&amp; criterion == GREATER_OR_EQUAL</item>
 		/// </list>
 		/// </summary>
 		/// <param name="target">the target object to compare to</param>
@@ -65,7 +65,7 @@ namespace Risotto.Functors.Predicates
 		/// <exception cref="InvalidOperationException">if the criterion is invalid</exception>
 		public bool Evaluate(T target)
 		{
-			int comparisonResult = _comparer.Compare(target, _value);
+			int comparisonResult = _comparer.Compare(_value, target);
 
 			return _criterion switch
 			{
