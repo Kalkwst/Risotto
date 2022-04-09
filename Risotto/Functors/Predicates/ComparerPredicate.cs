@@ -42,6 +42,9 @@ namespace Risotto.Functors.Predicates
 
 		public ComparerPredicate(T value, IComparer<T> comparer, Criterion criterion)
 		{
+			Objects.RequireNonNull(comparer, nameof(comparer));
+			Objects.RequireNonNull(criterion, nameof(criterion));
+
 			_value = value;
 			_comparer = comparer;
 			_criterion = criterion;
