@@ -18,6 +18,17 @@ namespace Risotto.Test.Functors.Predicates
 		}
 
 		[Test]
+		public void ComparerPredicateConstructorTest()
+		{
+			var cuboid1 = new Cuboid(1, 2, 3);
+			var cuboid2 = new Cuboid(1, 2, 3);
+
+			ComparerPredicate<Cuboid> predicate = new(cuboid1, new CuboidAreaComparer());
+
+			Assert.IsTrue(predicate.Evaluate(cuboid2));
+		}
+
+		[Test]
 		public void ComparerPredicateAssertEqualsTrue()
 		{
 			var cuboid1 = new Cuboid(1, 2, 3);
@@ -123,6 +134,18 @@ namespace Risotto.Test.Functors.Predicates
 
 			ComparerPredicate<Cuboid> predicate = new(cuboid1, new CuboidAreaComparer(), ComparerPredicate<Cuboid>.Criterion.GREATER_OR_EQUAL);
 			Assert.IsFalse(predicate.Evaluate(cuboid2));
+		}
+
+		[Test]
+		public void ComparerPredicateAssertInvalidCriterion()
+		{
+			var cuboid1 = new Cuboid(1, 2, 3);
+			var cuboid2 = new Cuboid(2, 2, 3);
+
+			var ex = Assert.Throws<InvalidOperationException>(() =>
+			{
+				ComparerPredicate<Cuboid> predicate = new(cuboid1, new CuboidAreaComparer(), new ComparerPredicate<Cuboid>.Criterion());
+			});
 		}
 	}
 
