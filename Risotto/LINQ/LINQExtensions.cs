@@ -76,35 +76,23 @@ namespace Risotto.LINQ
 
 		internal static bool Truthy<T>(this T obj)
 		{
-			if (obj == null)
+			if ((obj == null)|| (obj is string && (obj as string == string.Empty)) ||
+			    (obj is bool @bool && @bool == false) ||
+				(obj is byte @byte && @byte == 0) ||
+				(obj is sbyte @sbyte && @sbyte == 0) ||
+				(obj is short @short && @short == 0) ||
+				(obj is ushort @ushort && @ushort == 0) ||
+				(obj is int @int && @int == 0) ||
+				(obj is uint @uint && @uint == 0) ||
+				(obj is long @long && @long == 0) ||
+				(obj is ulong @ulong && @ulong == 0) ||
+				(obj is float @float && @float == 0) ||
+				(obj is double @double && @double == 0) ||
+				(obj is decimal @decimal && @decimal == 0))
+			{
 				return false;
-			if (obj is string && (obj as string == string.Empty))
-				return false;
-			if (obj is bool @bool && @bool == false)
-				return false;
-			if (obj is byte @byte && @byte == 0)
-				return false;
-			if (obj is sbyte @sbyte && @sbyte == 0)
-				return false;
-			if (obj is short @short && @short == 0)
-				return false;
-			if (obj is ushort @ushort && @ushort == 0)
-				return false;
-			if (obj is int @int && @int == 0)
-				return false;
-			if (obj is uint @uint && @uint == 0)
-				return false;
-			if (obj is long @long && @long == 0)
-				return false;
-			if (obj is ulong @ulong && @ulong == 0)
-				return false;
-			if (obj is float @float && @float == 0)
-				return false;
-			if (obj is double @double && @double == 0)
-				return false;
-			if (obj is decimal @decimal && @decimal == 0)
-				return false;
-
+			}
+				
 			return true;
 		}
 
