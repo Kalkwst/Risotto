@@ -21,9 +21,17 @@ namespace Risotto.Collection
 
 		public bool IsReadOnly => Decorated().IsReadOnly;
 
-		public void Add(T item)
+		public virtual void Add(T item)
 		{
 			Decorated().Add(item);
+		}
+
+		public virtual void AddRange(ICollection<T> collection)
+		{
+			foreach(T item in collection)
+			{
+				Add(item);
+			}
 		}
 
 		public void Clear()
