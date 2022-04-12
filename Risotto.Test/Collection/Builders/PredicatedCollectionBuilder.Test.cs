@@ -67,5 +67,51 @@ namespace Risotto.Test.Collection.Builders
 
 			Assert.IsTrue(builder.GetAcceptedElements().Count == 0);
 		}
+
+		[Test]
+		public void PredictedCollectionBuilderAddRangeOfValidElements()
+		{
+			NotNullPredicate<string> predicate = new();
+			PredicatedCollectionBuilder<string> builder = new(predicate);
+
+			List<string> validElements = new();
+			validElements.Add("a");
+			validElements.Add("b");
+			validElements.Add("c");
+
+			builder.AddRange(validElements);
+
+			List<string> list = builder.GetAcceptedElements();
+
+			Assert.IsTrue(list.Contains("a"));
+			Assert.IsTrue(list.Contains("b"));
+			Assert.IsTrue(list.Contains("c"));
+
+			Assert.IsTrue(builder.GetRejectedElements().Count == 0);
+		}
+
+		[Test]
+		public void PredictedCollectionBuilderAddRangeOfInvalidElements()
+		{
+			NotNullPredicate<string> predicate = new();
+			PredicatedCollectionBuilder<string> builder = new(predicate);
+
+			List<string> mixedElements = new();
+			mixedElements.Add("a");
+			mixedElements.Add("b");
+			mixedElements.Add(null);
+
+			builder.AddRange(mixedElements);
+
+			List<string> list = builder.GetAcceptedElements();
+
+			Assert.IsTrue(list.Contains("a"));
+			Assert.IsTrue(list.Contains("b"));
+			Assert.IsFalse(list.Contains(null));
+
+			Assert.IsTrue(builder.GetRejectedElements().Count == 1);
+
+			Assert.IsTrue(builder.GetRejectedElements().Contains(null));
+		}
 	}
 }
