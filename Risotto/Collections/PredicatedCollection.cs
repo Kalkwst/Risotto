@@ -33,7 +33,7 @@ namespace Risotto.Collection
 		/// <returns>a new predicated collection</returns>
 		/// <exception cref="ArgumentNullException">if the collection or predicate is null</exception>
 		/// <exception cref="ArgumentException">if the collection contains invalid elements</exception>
-		public static PredicatedCollection<T> GetPredicatedCollection(ICollection<T> collection, IPredicate<T> predicate)
+		public static PredicatedCollection<T> GetCollection(ICollection<T> collection, IPredicate<T> predicate)
 		{
 			return new PredicatedCollection<T>(collection, predicate);
 		}

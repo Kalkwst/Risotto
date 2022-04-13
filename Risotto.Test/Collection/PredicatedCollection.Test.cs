@@ -19,7 +19,7 @@ namespace Risotto.Test.Collection
 			list.Add("b");
 			list.Add("c");
 
-			var predicatedCollection = PredicatedCollection<string>.GetPredicatedCollection(list, predicate);
+			var predicatedCollection = PredicatedCollection<string>.GetCollection(list, predicate);
 
 			Assert.That(predicatedCollection, Is.Not.Null);
 			Assert.IsTrue(predicatedCollection.Count == 3);
@@ -37,7 +37,7 @@ namespace Risotto.Test.Collection
 
 			Assert.Throws<ArgumentException>(() =>
 			{
-				var predicatedCollection = PredicatedCollection<string>.GetPredicatedCollection(list, predicate);
+				var predicatedCollection = PredicatedCollection<string>.GetCollection(list, predicate);
 			});
 		}
 
@@ -51,7 +51,7 @@ namespace Risotto.Test.Collection
 			list.Add("b");
 			list.Add("c");
 
-			var predicatedCollection = PredicatedCollection<string>.GetPredicatedCollection(list, predicate);
+			var predicatedCollection = PredicatedCollection<string>.GetCollection(list, predicate);
 
 			predicatedCollection.Add("d");
 
@@ -68,7 +68,7 @@ namespace Risotto.Test.Collection
 			list.Add("b");
 			list.Add("c");
 
-			var predicatedCollection = PredicatedCollection<string>.GetPredicatedCollection(list, predicate);
+			var predicatedCollection = PredicatedCollection<string>.GetCollection(list, predicate);
 
 			try
 			{
@@ -91,7 +91,7 @@ namespace Risotto.Test.Collection
 			list.Add("b");
 			list.Add("c");
 
-			var predicatedCollection = PredicatedCollection<string>.GetPredicatedCollection(list, predicate);
+			var predicatedCollection = PredicatedCollection<string>.GetCollection(list, predicate);
 
 			List<string> newElements = new();
 			newElements.Add("d");
@@ -118,7 +118,7 @@ namespace Risotto.Test.Collection
 			list.Add("b");
 			list.Add("c");
 
-			var predicatedCollection = PredicatedCollection<string>.GetPredicatedCollection(list, predicate);
+			var predicatedCollection = PredicatedCollection<string>.GetCollection(list, predicate);
 
 			List<string> newElements = new();
 			newElements.Add(null);
@@ -141,7 +141,7 @@ namespace Risotto.Test.Collection
 			list.Add("b");
 			list.Add("c");
 
-			var predicatedCollection = PredicatedCollection<string>.GetPredicatedCollection(list, predicate);
+			var predicatedCollection = PredicatedCollection<string>.GetCollection(list, predicate);
 
 			var added = predicatedCollection.TryAdd("d");
 
@@ -160,7 +160,7 @@ namespace Risotto.Test.Collection
 			list.Add("b");
 			list.Add("c");
 
-			var predicatedCollection = PredicatedCollection<string>.GetPredicatedCollection(list, predicate);
+			var predicatedCollection = PredicatedCollection<string>.GetCollection(list, predicate);
 
 			var added = predicatedCollection.TryAdd(null);
 
