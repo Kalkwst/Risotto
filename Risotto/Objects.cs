@@ -5,6 +5,18 @@ namespace Risotto
 	public class Objects
 	{
 		/// <summary>
+		/// Returns true if the provided reference is null otherwise
+		/// returns false.
+		/// </summary>
+		/// <typeparam name="T">The type of the reference</typeparam>
+		/// <param name="obj">a reference to be checked against null</param>
+		/// <returns>true if the provided reference is null otherwise false</returns>
+		public static bool IsNull<T>(T obj)
+        {
+			return obj == null;
+        }
+
+		/// <summary>
 		/// Checks that the specified object reference is not <c>null</c>. This 
 		/// method is designed primarily for parameter validation in methods and 
 		/// constructors.

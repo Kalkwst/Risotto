@@ -231,14 +231,76 @@ namespace Risotto.Collections
             return Mutator.Remove(this, collections, item);
         }
 
+        /// <summary>
+        /// Remove the elements in the specified collection from this composite collection.
+        /// </summary>
+        /// <param name="coll">The collection of elements to remove</param>
+        /// <returns>true if the collection was modified</returns>
+        /// <exception cref="InvalidOperationException">if remove  is unsupported</exception>
+        public bool RemoveAll(ICollection<T> coll)
+        {
+            if (CollectionsUtils<T>.IsEmpty(coll))
+                return false;
+
+            bool changed = false;
+            foreach (var collection in collections)
+                foreach (var item in coll)
+                    changed |= Remove(item);
+
+            return changed;
+
+        }
+
+        /// <summary>
+        /// Removes all of the elements of this collection that satisfy the given predicate from this composite collection.
+        /// </summary>
+        /// <param name="filter">a predicate which returns true for elements to be removed</param>
+        /// <returns>true if the collection is modified</returns>
+        public bool RemoveIf(IPredicate<T> filter)
+        {
+            if (Objects.IsNull(filter))
+                return false;
+            bool changed = false;
+
+            foreach (var collection in collections)
+                foreach (var item in collection)
+                    if (filter.Evaluate(item))
+                    {
+                        collection.Remove(item);
+                        changed = true;
+                    }
+
+            return changed;
+        }
+
+        /// <summary>
+        /// Removes a collection from the composite
+        /// </summary>
+        /// <param name="coll">collection to be removed</param>
+        public void RemoveComposited(ICollection<T> coll)
+        {
+            collections.Remove(coll);
+        }
+
+        /// <summary>
+        /// Gets the collections being decorated.
+        /// </summary>
+        /// <returns>An IReadOnlyList of all collections in this composite.</returns>
+        public IReadOnlyList<T> GetCollections()
+        {
+            return (IReadOnlyList<T>)collections.AsReadOnly();
+        }
+
         public IEnumerator<T> GetEnumerator()
         {
-            throw new NotImplementedException();
+            foreach(var collection in collections)
+                foreach(var item in collection)
+                    yield return item;
         }
 
         System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
         {
-            throw new NotImplementedException();
+            return GetEnumerator();
         }
     }
 
